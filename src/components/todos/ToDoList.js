@@ -1,7 +1,8 @@
 import React from 'react';
 import ToDoItem from './ToDoItem';
+import { connect } from 'react-redux';
 
-export default function ToDoList(props) {
+const ToDoList = props => {
 	return (
 		<div>
 			{props.items ? (
@@ -11,8 +12,14 @@ export default function ToDoList(props) {
 					))}
 				</ul>
 			) : (
-				<h3>No tasks today</h3>
+				<h3>No tasks yet</h3>
 			)}
 		</div>
 	);
-}
+};
+
+const mapStateToProps = state => {
+	return { items: state.ToDos };
+};
+
+export default connect(mapStateToProps)(ToDoList);

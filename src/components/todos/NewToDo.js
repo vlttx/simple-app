@@ -1,31 +1,22 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { addToDo } from '../actions/ToDos';
 
-export default class NewToDo extends Component() {
-	constructor() {
-		super();
-		this.state = {
-			items: [],
-			text: ''
-		};
+class NewToDo extends Component {
+	state = { text: '', id: null };
 
-		this.handleChange = e => {
-			this.setState({ text: e.target.value });
+	handleChange = e => {
+		this.setState({ text: e.target.value });
+	};
+	handleSubmit = e => {
+		e.preventDefault();
+		const newItem = {
+			text: this.state.text,
+			id: Date.now()
 		};
-		this.handleSubmit = e => {
-			e.preventDefault();
-			if (!this.state.text.length) {
-				return;
-			}
-			const newItem = {
-				text: this.state.text,
-				id: Date.now()
-			};
-			this.setState(state => ({
-				items: state.items.concat(newItem),
-				text: ''
-			}));
-		};
-	}
+		this.props.addToDo(newItem);
+		this.setState({ text: '', id: null });
+	};
 
 	render() {
 		return (
@@ -36,8 +27,12 @@ export default class NewToDo extends Component() {
 					onChange={this.handleChange}
 					value={this.state.text}
 				/>
-				<button> Add #{this.state.items.length + 1}</button>
+				<button> Add</button>
 			</form>
 		);
 	}
 }
+export default connect(
+	null,
+	{ addToDo }
+)(NewToDo);

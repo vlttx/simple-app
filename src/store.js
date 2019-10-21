@@ -1,11 +1,9 @@
 import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
 import thunk from 'redux-thunk';
 import ToDos from './reducers/ToDos';
-import ToDoForm from './reducers/ToDoForm';
 
 const reducer = combineReducers({
-	ToDos,
-	ToDoForm
+	ToDos
 });
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
