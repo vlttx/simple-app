@@ -1,4 +1,5 @@
 import React from 'react';
+import ToDoItem from './ToDoItem';
 
 export default function ToDoList(props) {
 	return (
@@ -6,7 +7,7 @@ export default function ToDoList(props) {
 			{props.items ? (
 				<ul>
 					{props.items.map(item => (
-						<li key={item.id}>{item.text}</li>
+						<ToDoItem key={item.id} text={item.text} />
 					))}
 				</ul>
 			) : (
