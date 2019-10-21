@@ -4,7 +4,7 @@ import ToDoContainer from '../todos/ToDoContainer';
 export default function() {
 	return (
 		<div>
-			Hello, dear. Just do it!
+			<h1>Just do it!</h1>
 			<ToDoContainer />
 		</div>
 	);
