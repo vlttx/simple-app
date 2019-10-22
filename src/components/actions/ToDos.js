@@ -11,3 +11,9 @@ export const deleteToDo = id => {
 		id
 	};
 };
+export const completeToDo = item => {
+	return {
+		type: 'COMPLETE_TODO',
+		item
+	};
+};
