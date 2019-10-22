@@ -1,4 +1,4 @@
-export default (state = [], action) => {
+const ToDos = (state = [], action) => {
 	switch (action.type) {
 		case 'ADD_TODO':
 			return state.concat(action.item);
@@ -8,3 +8,5 @@ export default (state = [], action) => {
 			return state;
 	}
 };
+
+export default ToDos;
