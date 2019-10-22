@@ -1,15 +1,13 @@
-import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-import ToDos from './reducers/ToDos';
+import rootReducer from './reducers/root-reducer';
 import { persistStore } from 'redux-persist';
-const reducer = combineReducers({
-	ToDos
-});
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 export const store = createStore(
-	reducer,
+	rootReducer,
 	composeEnhancer(applyMiddleware(thunk))
 );
 export const persistor = persistStore(store);
-export default store;
+
+export default { store, persistor };
