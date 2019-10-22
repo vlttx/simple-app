@@ -19,7 +19,7 @@ const ToDoList = props => {
 };
 
 const mapStateToProps = state => {
-	return { items: state.ToDos };
+	return { items: state.todos };
 };
 
 export default connect(mapStateToProps)(ToDoList);
