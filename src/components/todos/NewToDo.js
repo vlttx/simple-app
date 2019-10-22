@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { addToDo } from '../actions/ToDos';
 
 class NewToDo extends Component {
-	state = { text: '', id: null };
+	state = { text: '', id: null, complete: false };
 
 	handleChange = e => {
 		this.setState({ text: e.target.value });
@@ -12,16 +12,16 @@ class NewToDo extends Component {
 		e.preventDefault();
 		const newItem = {
 			text: this.state.text,
-			id: Date.now()
+			id: Date.now(),
+			complete: false
 		};
 		this.props.addToDo(newItem);
-		this.setState({ text: '', id: null });
+		this.setState({ text: '', id: null, complete: false });
 	};
 
 	render() {
 		return (
 			<form onSubmit={this.handleSubmit}>
-				<label htmlFor='new-todo'>Things that need to be done:</label> <br />
 				<input
 					id='new-todo'
 					onChange={this.handleChange}
