@@ -3,7 +3,7 @@ const ToDos = (state = [], action) => {
 		case 'ADD_TODO':
 			return state.concat(action.item);
 		case 'DELETE_TODO':
-			return state.filter(item => (item.id === action.itemId ? false : true));
+			return state.filter(item => (item.id === action.id ? false : true));
 		default:
 			return state;
 	}

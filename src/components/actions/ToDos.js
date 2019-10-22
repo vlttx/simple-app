@@ -4,3 +4,10 @@ export const addToDo = item => {
 		item
 	};
 };
+
+export const deleteToDo = id => {
+	return {
+		type: 'DELETE_TODO',
+		id
+	};
+};

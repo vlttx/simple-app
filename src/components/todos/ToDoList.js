@@ -8,7 +8,7 @@ const ToDoList = props => {
 			{props.items ? (
 				<ul>
 					{props.items.map(item => (
-						<ToDoItem key={item.id} text={item.text} />
+						<ToDoItem key={item.id} text={item.text} id={item.id} />
 					))}
 				</ul>
 			) : (
