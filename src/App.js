@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import logo from './logo.svg';
 import './App.css';
 import './components/pages/Homepage';
@@ -18,4 +17,4 @@ class App extends Component {
 	}
 }
 
-export default connect(null)(App);
+export default App;
