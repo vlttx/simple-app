@@ -1,6 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addToDo } from '../actions/ToDos';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import 'bootstrap-css-only/css/bootstrap.min.css';
+import 'mdbreact/dist/css/mdb.css';
+import {
+	MDBBtn,
+	MDBInput,
+	MDBModal,
+	MDBIcon,
+	MDBBadge,
+	MDBContainer,
+	MDBRow,
+	MDBCol
+} from 'mdbreact';
 
 class NewToDo extends Component {
 	state = { text: '', id: null, complete: false };
@@ -27,7 +40,9 @@ class NewToDo extends Component {
 					onChange={this.handleChange}
 					value={this.state.text}
 				/>
-				<button> Add</button>
+				<MDBCol xl='3' md='6' className='mx-auto'>
+				<MDBBtn color='info'> Add</MDBBtn>
+				</MDBCol>
 			</form>
 		);
 	}
