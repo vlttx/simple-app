@@ -4,16 +4,7 @@ import { addToDo } from '../actions/ToDos';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
-import {
-	MDBBtn,
-	MDBInput,
-	MDBModal,
-	MDBIcon,
-	MDBBadge,
-	MDBContainer,
-	MDBRow,
-	MDBCol
-} from 'mdbreact';
+import { MDBBtn, MDBCol } from 'mdbreact';
 
 class NewToDo extends Component {
 	state = { text: '', id: null, complete: false };
@@ -41,7 +32,7 @@ class NewToDo extends Component {
 					value={this.state.text}
 				/>
 				<MDBCol xl='3' md='6' className='mx-auto'>
-				<MDBBtn color='info'> Add</MDBBtn>
+					<MDBBtn color='info'> Add</MDBBtn>
 				</MDBCol>
 			</form>
 		);
